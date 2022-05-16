@@ -11,6 +11,11 @@ describe("Servers test (with setup and tear-down)", function() {
     expect(allServers['server' + serverId].serverName).toEqual('Alice');
   });
 
+  it('should add a new table row to UI', function() {
+    submitServerInfo();
+    expect(document.getElementById('server' + serverId).children[0].innerText).toEqual('Alice');
+  });
+
   afterEach(function() {
     for (let key in allServers){
       document.getElementById(key).remove();
