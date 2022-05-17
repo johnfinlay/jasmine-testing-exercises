@@ -36,6 +36,7 @@ describe('Helpers test', function() {
     testTbody.appendChild(testTr);
     appendDeleteBtn(testTr);
     expect(testTr.innerHTML).toEqual('<td>X</td>');
+    // testTr.children[0].click() => how to test???
   });
 afterAll(function() {
   allPayments = {};
