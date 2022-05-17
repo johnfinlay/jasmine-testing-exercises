@@ -22,7 +22,13 @@ describe('Helpers test', function() {
     expect(calculateTipPercent(100, 50)).toEqual(50);
   });
 // appendTd(tr, value)
-
+  it('should append a <td> element with text to a given <tr> element', function() {
+    const testTr = document.createElement('tr');
+    appendTd(testTr, 'howdy')
+    expect(testTr.innerHTML).toEqual('<td>howdy</td>');
+    expect(testTr.children.length).toEqual(1);
+    expect(testTr.children[0].innerHTML).toEqual('howdy');
+  });
 afterAll(function() {
   allPayments = {};
 });
