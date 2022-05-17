@@ -29,6 +29,14 @@ describe('Helpers test', function() {
     expect(testTr.children.length).toEqual(1);
     expect(testTr.children[0].innerHTML).toEqual('howdy');
   });
+// appendDeleteBtn(tr)
+  it('should append a td to the given tr, with click event that will delete the tr', function() {
+    const testTbody = document.createElement('tbody');
+    const testTr = document.createElement('tr');
+    testTbody.appendChild(testTr);
+    appendDeleteBtn(testTr);
+    expect(testTr.innerHTML).toEqual('<td>X</td>');
+  });
 afterAll(function() {
   allPayments = {};
 });
