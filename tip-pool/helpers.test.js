@@ -17,7 +17,10 @@ describe('Helpers test', function() {
     expect(sumPaymentTotal('tipPercent')).toEqual(36);
   });
 // calculateTipPercent(billAmt, tipAmt)
-
+  it('should return a tip percentage', function() {
+    expect(calculateTipPercent(25, 3)).toEqual(12);
+    expect(calculateTipPercent(100, 50)).toEqual(50);
+  });
 // appendTd(tr, value)
 
 afterAll(function() {
