@@ -33,10 +33,9 @@ describe('Helpers test', function() {
   it('should append a td to the given tr, with click event that will delete the tr', function() {
     const testTbody = document.createElement('tbody');
     const testTr = document.createElement('tr');
-    testTbody.appendChild(testTr);
     appendDeleteBtn(testTr);
+    testTbody.appendChild(testTr);
     expect(testTr.innerHTML).toEqual('<td>X</td>');
-    // testTr.children[0].click() => how to test???
   });
 afterAll(function() {
   allPayments = {};

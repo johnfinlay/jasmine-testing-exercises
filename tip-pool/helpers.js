@@ -21,13 +21,20 @@ function calculateTipPercent(billAmt, tipAmt) {
 function appendTd(tr, value) {
   let newTd = document.createElement('td');
   newTd.innerText = value;
-
   tr.append(newTd);
 }
 
 function appendDeleteBtn(tr) {
+  // let newTd = document.createElement('td');
+  // newTd.innerText = 'X';
   appendTd(tr, 'X');
-  tr.addEventListener('click', function(e) {
+  
+  tr.lastChild.addEventListener('click', function(e) {
+    let parendId = e.target.parentElement.getAttribute('id');
+    delete allPayments[parendId];
+    delete allServers[parendId];
     e.target.parentElement.remove();
   });
+  // tr.append(newTd);
+  // console.log(tr);
 }
